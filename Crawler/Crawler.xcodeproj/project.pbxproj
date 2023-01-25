@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		60389A882980BDB5005E4E8F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60389A872980BDB5005E4E8F /* main.swift */; };
+		60389A8F2981037F005E4E8F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60389A8E2981037F005E4E8F /* NetworkManager.swift */; };
 		749C27B3A9ECE34B07A9B5BD /* Pods_Crawler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F238B543B214014402ED742 /* Pods_Crawler.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		4F238B543B214014402ED742 /* Pods_Crawler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crawler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60389A842980BDB5005E4E8F /* Crawler */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Crawler; sourceTree = BUILT_PRODUCTS_DIR; };
 		60389A872980BDB5005E4E8F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		60389A8E2981037F005E4E8F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A182812676318F944FB281E5 /* Pods-Crawler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crawler.debug.xcconfig"; path = "Target Support Files/Pods-Crawler/Pods-Crawler.debug.xcconfig"; sourceTree = "<group>"; };
 		F9EC1C532A414BB563034B57 /* Pods-Crawler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crawler.release.xcconfig"; path = "Target Support Files/Pods-Crawler/Pods-Crawler.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -49,7 +51,6 @@
 				A182812676318F944FB281E5 /* Pods-Crawler.debug.xcconfig */,
 				F9EC1C532A414BB563034B57 /* Pods-Crawler.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -75,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				60389A872980BDB5005E4E8F /* main.swift */,
+				60389A8E2981037F005E4E8F /* NetworkManager.swift */,
 			);
 			path = Crawler;
 			sourceTree = "<group>";
@@ -171,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60389A8F2981037F005E4E8F /* NetworkManager.swift in Sources */,
 				60389A882980BDB5005E4E8F /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
