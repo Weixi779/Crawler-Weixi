@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		60389A882980BDB5005E4E8F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60389A872980BDB5005E4E8F /* main.swift */; };
+		749C27B3A9ECE34B07A9B5BD /* Pods_Crawler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F238B543B214014402ED742 /* Pods_Crawler.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +24,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4F238B543B214014402ED742 /* Pods_Crawler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crawler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60389A842980BDB5005E4E8F /* Crawler */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Crawler; sourceTree = BUILT_PRODUCTS_DIR; };
 		60389A872980BDB5005E4E8F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		A182812676318F944FB281E5 /* Pods-Crawler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crawler.debug.xcconfig"; path = "Target Support Files/Pods-Crawler/Pods-Crawler.debug.xcconfig"; sourceTree = "<group>"; };
+		F9EC1C532A414BB563034B57 /* Pods-Crawler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crawler.release.xcconfig"; path = "Target Support Files/Pods-Crawler/Pods-Crawler.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,17 +36,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				749C27B3A9ECE34B07A9B5BD /* Pods_Crawler.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54BD508A220EEA1374807C3B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A182812676318F944FB281E5 /* Pods-Crawler.debug.xcconfig */,
+				F9EC1C532A414BB563034B57 /* Pods-Crawler.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		60389A7B2980BDB5005E4E8F = {
 			isa = PBXGroup;
 			children = (
 				60389A862980BDB5005E4E8F /* Crawler */,
 				60389A852980BDB5005E4E8F /* Products */,
+				54BD508A220EEA1374807C3B /* Pods */,
+				C9DBEE34ADD17D35633DA21C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +79,14 @@
 			path = Crawler;
 			sourceTree = "<group>";
 		};
+		C9DBEE34ADD17D35633DA21C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F238B543B214014402ED742 /* Pods_Crawler.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -69,6 +94,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 60389A8B2980BDB5005E4E8F /* Build configuration list for PBXNativeTarget "Crawler" */;
 			buildPhases = (
+				0A0F2BA0966CBF0B02178271 /* [CP] Check Pods Manifest.lock */,
 				60389A802980BDB5005E4E8F /* Sources */,
 				60389A812980BDB5005E4E8F /* Frameworks */,
 				60389A822980BDB5005E4E8F /* CopyFiles */,
@@ -114,6 +140,31 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A0F2BA0966CBF0B02178271 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Crawler-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		60389A802980BDB5005E4E8F /* Sources */ = {
@@ -242,6 +293,7 @@
 		};
 		60389A8C2980BDB5005E4E8F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A182812676318F944FB281E5 /* Pods-Crawler.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 65972SHM9W;
@@ -253,6 +305,7 @@
 		};
 		60389A8D2980BDB5005E4E8F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9EC1C532A414BB563034B57 /* Pods-Crawler.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 65972SHM9W;
