@@ -7,5 +7,8 @@
 
 import Foundation
 
-print("Hello, World!")
+let URLString = "https://www.baidu.com/"
+let data = NetworkManager.shared.URLReuqest(URLString)
+let result = NetworkManager.shared.UTF8DataEncoding(data)
+print(result)
 
