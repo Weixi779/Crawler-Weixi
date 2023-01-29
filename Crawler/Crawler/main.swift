@@ -8,7 +8,7 @@
 import Foundation
 
 let URLString = "https://www.baidu.com/"
-let data = NetworkManager.shared.URLReuqest(URLString)
+let data = try await NetworkManager.shared.networkRequest(URLString)
 let result = NetworkManager.shared.UTF8DataEncoding(data)
 print(result)
 

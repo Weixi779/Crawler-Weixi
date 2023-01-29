@@ -16,42 +16,34 @@ class NetworkManager {
     
     private init() {}
     
-    // MARK: - 基础部分
-    public func URLReuqest(_ targetURL: String) -> Data? {
-        var result: Data? = nil
-        let reuqestURL = URL(string: targetURL)!
-        let task = URLSession.shared.dataTask(with: reuqestURL) { data, response, error in
-            // 错误处理
-            if error != nil {
-                self.log("NetworkReuqest is Error")
-                return
-            }
-            // 状态码处理
-            if let response = response as? HTTPURLResponse {
-                let code = response.statusCode
-                // 成功处理
-                if code >= 200 && code < 300 {
-                    result = data
-                }
-                self.log("Request StatusCode is \(code)")
-            }
-            
+    // MARK: - URLRequest
+    private func createURLRequest(_ targetURL: String) -> URLRequest {
+        let url = URL(string: targetURL)!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        return request
+    }
+    
+    private func addRequestHeader(_ request: inout URLRequest, _ header: String, _ value: String) {
+        request.addValue(value, forHTTPHeaderField: header)
+    }
+    
+    public func networkRequest(_ targetURL: String) async throws -> Data {
+        let request = self.createURLRequest(targetURL)
+        let (data, response) = try await URLSession.shared.data(for: request)
+
+        if let response = response as? HTTPURLResponse {
+            self.log("\(targetURL) Request StatusCode is \(response.statusCode)")
         }
-        task.resume()
-        
-        return result
+        return data
     }
     
     private func log(_ arguments: String) {
         print("---- NetworkManager: \(arguments) ----")
     }
-    
-    public func UTF8DataEncoding(_ input: Data?) -> String {
-        guard let input = input else {
-            self.log("UTF8DataEncoding input data is nil!")
-            return ""
-        }
-        
+
+    // MARK: - String Convert
+    public func UTF8DataEncoding(_ input: Data) -> String {        
         if let result = String(data: input, encoding: .utf8) {
             return result
         }
