@@ -7,10 +7,6 @@
 
 import Foundation
 
-enum HTMLEncode {
-    case UFT8, GB2312
-}
-
 class NetworkManager {
     static let shared = NetworkManager()
     
@@ -49,6 +45,20 @@ class NetworkManager {
         }
         
         self.log("UTF8DataEncoding Convert Error")
+        
+        return ""
+    }
+    
+    public func GB2312DataEncoding(_ input: Data) -> String {
+        let GB2312RawValue = UInt32(CFStringEncodings.GB_18030_2000.rawValue)
+        let StringEncoding = CFStringConvertEncodingToNSStringEncoding(GB2312RawValue)
+        let buffer = String.Encoding(rawValue: StringEncoding)
+        
+        if let result = String(data: input, encoding: buffer) {
+            return result
+        }
+        
+        self.log("GB2312DataEncoding Convert Error")
         
         return ""
     }
