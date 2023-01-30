@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		605C207C2984C6F600713490 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605C207B2984C6F600713490 /* main.swift */; };
 		605C20832984C78E00713490 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605C20822984C78E00713490 /* NetworkManager.swift */; };
+		605C2086298817C500713490 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 605C2085298817C500713490 /* SwiftSoup */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				605C2086298817C500713490 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +83,9 @@
 			dependencies = (
 			);
 			name = Crawler;
+			packageProductDependencies = (
+				605C2085298817C500713490 /* SwiftSoup */,
+			);
 			productName = Crawler;
 			productReference = 605C20782984C6F600713490 /* Crawler */;
 			productType = "com.apple.product-type.tool";
@@ -109,6 +114,9 @@
 				Base,
 			);
 			mainGroup = 605C206F2984C6F600713490;
+			packageReferences = (
+				605C2084298817C500713490 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+			);
 			productRefGroup = 605C20792984C6F600713490 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -288,6 +296,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		605C2084298817C500713490 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://gitee.com/spm_mirror/SwiftSoup";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		605C2085298817C500713490 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 605C2084298817C500713490 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 605C20702984C6F600713490 /* Project object */;
 }
