@@ -64,3 +64,32 @@ class NetworkManager {
     }
 }
 
+extension String {
+    func AddURLQuery(_ query: String, _ value: String) -> String {
+        var result = self
+        let isContainQuestionMark = self.contains("?")
+        let spliceString = isContainQuestionMark ? "&" : "?"
+        let keyValueString = "\(query)=\(value)"
+        result.append(spliceString)
+        result.append(keyValueString)
+        return result
+    }
+    
+    func AddURLField(_ field: String) -> String {
+        var result = self
+        if let last = result.last {
+            if last == "/" {
+                result.append(field)
+            } else {
+                result.append("/\(field)")
+            }
+        }
+        return result
+    }
+}
+
+extension URLRequest {
+    mutating func AddRequestHeader(_ header: String, _ value: String) {
+        self.addValue(value, forHTTPHeaderField: header)
+    }
+}
