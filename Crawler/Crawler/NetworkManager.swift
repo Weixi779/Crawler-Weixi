@@ -20,10 +20,6 @@ class NetworkManager {
         return request
     }
     
-    private func addRequestHeader(_ request: inout URLRequest, _ header: String, _ value: String) {
-        request.addValue(value, forHTTPHeaderField: header)
-    }
-    
     public func networkRequest(_ targetURL: String) async throws -> Data {
         let request = self.createURLRequest(targetURL)
         let (data, response) = try await URLSession.shared.data(for: request)
@@ -61,30 +57,6 @@ class NetworkManager {
         self.log("GB2312DataEncoding Convert Error")
         
         return ""
-    }
-}
-
-extension String {
-    func AddURLQuery(_ query: String, _ value: String) -> String {
-        var result = self
-        let isContainQuestionMark = self.contains("?")
-        let spliceString = isContainQuestionMark ? "&" : "?"
-        let keyValueString = "\(query)=\(value)"
-        result.append(spliceString)
-        result.append(keyValueString)
-        return result
-    }
-    
-    func AddURLField(_ field: String) -> String {
-        var result = self
-        if let last = result.last {
-            if last == "/" {
-                result.append(field)
-            } else {
-                result.append("/\(field)")
-            }
-        }
-        return result
     }
 }
 
