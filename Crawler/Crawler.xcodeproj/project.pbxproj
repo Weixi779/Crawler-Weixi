@@ -10,6 +10,7 @@
 		605C207C2984C6F600713490 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605C207B2984C6F600713490 /* main.swift */; };
 		605C20832984C78E00713490 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605C20822984C78E00713490 /* NetworkManager.swift */; };
 		605C2086298817C500713490 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 605C2085298817C500713490 /* SwiftSoup */; };
+		605C208A298D3BF100713490 /* Jable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605C2089298D3BF100713490 /* Jable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,7 @@
 		605C20782984C6F600713490 /* Crawler */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Crawler; sourceTree = BUILT_PRODUCTS_DIR; };
 		605C207B2984C6F600713490 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		605C20822984C78E00713490 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		605C2089298D3BF100713490 /* Jable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			children = (
 				605C207B2984C6F600713490 /* main.swift */,
 				605C20822984C78E00713490 /* NetworkManager.swift */,
+				605C2089298D3BF100713490 /* Jable.swift */,
 			);
 			path = Crawler;
 			sourceTree = "<group>";
@@ -132,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				605C20832984C78E00713490 /* NetworkManager.swift in Sources */,
+				605C208A298D3BF100713490 /* Jable.swift in Sources */,
 				605C207C2984C6F600713490 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
